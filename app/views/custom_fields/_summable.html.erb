@@ -1,0 +1,19 @@
+<% case custom_field.class.name
+   when 'IssueCustomField' %>
+     <p><%= form.check_box(:summable) %></p>
+<% end %>
+
+<%= javascript_tag('toggle_summable_field_format();') %>
+
+<% content_for :header_tags do %>
+  <%= javascript_include_tag('summable_prototype', :plugin => 'redmine_summed_fields') %>
+  <script type="text/javascript">
+  //<![CDATA[
+    Event.observe(window, 'load', function() {
+      Event.observe('custom_field_field_format', 'change', toggle_summable_field_format);
+      toggle_summable_field_format();
+    });
+  //]]>
+  </script>
+<% end %>
+
