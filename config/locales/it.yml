@@ -1,3 +1,4 @@
 # English strings go here for Rails i18n
 it:
   field_summable: "Sommabile"
+  field_listed: "Attributo visibile come sottoattività"

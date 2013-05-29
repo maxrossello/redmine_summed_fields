@@ -18,6 +18,9 @@ module SummedFieldsIssuePatch
             if attrs['summable']
               attrs.delete('summable')
             end
+            if attrs['listed']
+              attrs.delete('listed')
+            end
           end
           send :safe_attributes_without_summed=, attrs, user
         end

@@ -1,13 +1,21 @@
 = summed_fields
 
-Tested with redmine 1.4.x
+Tested with redmine 1.4.x and 2.3.1
 
-Configure numeric (integer and float) issue custom fields as summable, so that a parent issue can sum the field values among all its sub-tasks much like it happens for estimated and spent times.
+Configure numeric (integer and float) issue custom fields as summable, so that a parent issue can sum the field values among all its sub-tasks similar to what happens for estimated and spent times. Furthermore, the sum is displayed also in the issue listing view (spent time is not summed up in the parent issue, in that view, instead).
+
+Another issue custom field's setting is added to configure the field as shown in the subtask section of an issue detailed view.
 
 Subtask view in the parent issue is modified so that:
-- a table header is displayed
+- a table header is displayed containing field names
 - %done is removed from display in order to save space
-- summed fields are listed displaying the values in the sub tasks
+- configured fields are listed, displaying the field values of the subtasks
+- subtasks that do not own some shown field (displayed because of some other subtask) gray-out the corresponding table cell
 
-This way, the user can have a quick view of each partial value and of the sum altogether
+This way, the user can have a quick view of each partial value and of the sum altogether.
+The issue overview can be configured with meaningful fields from subtasks and offer better insights.
+
+= installation
+
+Follow standard plugin installation procedure including plugin migration
 

@@ -1,6 +1,7 @@
 <% case custom_field.class.name
    when 'IssueCustomField' %>
      <p><%= form.check_box(:summable) %></p>
+     <p><%= form.check_box(:listed) %></p>
 <% end %>
 
 <%= javascript_tag('toggle_summable_field_format();') %>
