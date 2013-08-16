@@ -1,0 +1,4 @@
+# German strings go here for Rails i18n
+de:
+  field_summable: "summierbar"
+  field_listed: "wird als Unteraufgabenwert angezeigt"
