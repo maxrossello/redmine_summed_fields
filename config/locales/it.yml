@@ -2,3 +2,5 @@
 it:
   field_summable: "Sommabile"
   field_listed: "Attributo visibile come sottoattività"
+  label_keep_progress_bar: "Mantieni la barra di avanzamento nella lista dei subtask"
+

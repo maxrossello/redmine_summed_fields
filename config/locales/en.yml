@@ -2,3 +2,4 @@
 en:
   field_summable: "Summable"
   field_listed: "Shown as subtask attribute"
+  label_keep_progress_bar: "Keep progress bar in summaries"

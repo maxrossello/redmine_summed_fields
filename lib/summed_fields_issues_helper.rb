@@ -32,7 +32,8 @@ module SummedFieldsIssuesHelper
           content_tag('th', l(:field_subject)) +
           content_tag('th', l(:field_status)) +
           content_tag('th', l(:field_assigned_to)) +
-          field_headers.html_safe)
+          field_headers.html_safe +
+          (content_tag('th', l(:field_done_ratio))    if Setting.plugin_redmine_summed_fields['progress_bar'] == "1"))
 
         issue_list(issue.descendants.visible.sort_by(&:lft)) do |child, level|
           custom_fields = child.available_custom_fields
@@ -43,8 +44,6 @@ module SummedFieldsIssuesHelper
              content_tag('td', link_to_issue(child, :truncate => 60), :class => 'subject') +
              content_tag('td align="center"', h(child.status)) +
              content_tag('td align="center"', link_to_user(child.assigned_to))
-             #content_tag('td', progress_bar(child.done_ratio, :width => '80px')),
-             #:class => "issue issue-#{child.id} hascontextmenu #{level > 0 ? "idnt idnt-#{level}" : nil}")
 
           map.each do |field|
             found = false
@@ -56,6 +55,7 @@ module SummedFieldsIssuesHelper
             end
             field_content << content_tag('td bgcolor="#dddddd" class="no-field-owner"', '') unless found
           end
+          field_content << content_tag('td', progress_bar(child.done_ratio, :width => '80px')) if Setting.plugin_redmine_summed_fields['progress_bar'] == "1"
           field_values << content_tag('tr', field_content, :class => css).html_safe
         end
         s << field_values
