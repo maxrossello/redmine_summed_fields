@@ -2,3 +2,4 @@
 de:
   field_summable: "summierbar"
   field_listed: "wird als Unteraufgabenwert angezeigt"
+  label_keep_progress_bar: "Behalten Fortschrittsbalken in Zusammenfassungen"
