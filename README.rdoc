@@ -18,10 +18,11 @@ The issue overview can be configured with meaningful fields from subtasks and of
 = installation
 
 Copy the plugin into plugins folder, in my installation its like this:
-/opt/redmine-2.6.0-3/apps/redmine/htdocs/plugins/redmine_summed_fields
+
+    /opt/redmine-2.6.0-3/apps/redmine/htdocs/plugins/redmine_summed_fields
 
 Then you need to migrate the database like this:
-bundle exec rake redmine:plugins NAME=redmine_summed_fields RAILS_ENV=production
 
-Follow standard plugin installation procedure including plugin migration
+    bundle exec rake redmine:plugins NAME=redmine_summed_fields RAILS_ENV=production
+
 
