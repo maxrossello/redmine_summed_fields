@@ -19,7 +19,7 @@ Redmine::Plugin.register :redmine_summed_fields do
   name 'Summed Fields'
   author 'Massimo Rossello'
   description 'Allows for numeric issue custom fields to be summed up in the parent task similar to effort estimates and spent time'
-  version '1.0.0'
+  version '1.0.1'
   url 'https://github.com/maxrossello/redmine_summed_fields.git'
   author_url 'https://github.com/maxrossello'
   requires_redmine :version_or_higher => '1.4.0'

@@ -14,7 +14,7 @@ module SummedFieldsIssuePatch
 
     module InstanceMethods
         def safe_attributes_with_summed=(attrs, user=User.current)
-          unless leaf?
+          unless leaf? or attrs.nil?
             if attrs['summable']
               attrs.delete('summable')
             end
