@@ -1,6 +1,6 @@
 = summed_fields
 
-Tested with redmine 1.4.x, 2.3.1 to 2.3.3
+Compatible with redmine 1.4, 2.x.
 
 Configure numeric (integer and float) issue custom fields as summable, so that a parent issue can sum the field values among all its sub-tasks similar to what happens for estimated and spent times. Furthermore, the sum is displayed also in the issue listing view (spent time is not summed up in the parent issue, in that view, instead).
 
@@ -8,7 +8,7 @@ Another issue custom field's setting is added to configure the field as shown in
 
 Subtask view in the parent issue is modified so that:
 - a table header is displayed containing field names
-- %done is removed from display in order to save space
+- %done is removed from display in order to save space by default (option given in plugin settings)
 - configured fields are listed, displaying the field values of the subtasks
 - subtasks that do not own some shown field (displayed because of some other subtask) gray-out the corresponding table cell
 
@@ -17,5 +17,12 @@ The issue overview can be configured with meaningful fields from subtasks and of
 
 = installation
 
-Follow standard plugin installation procedure including plugin migration
+Copy the plugin into:
+
+    <redmine_root>/plugins/redmine_summed_fields
+
+Then you need to migrate the database like this:
+
+    bundle exec rake redmine:plugins NAME=redmine_summed_fields RAILS_ENV=production
+
 
